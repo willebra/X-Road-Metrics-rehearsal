@@ -30,7 +30,7 @@ requirements = [
     'requests==2.32.5',
     'tqdm==4.67.3',
     'pyyaml==6.0.3',
-    'urllib3==2.6.3',
+    'urllib3==2.8.0',
 ]
 
 classifiers = [
