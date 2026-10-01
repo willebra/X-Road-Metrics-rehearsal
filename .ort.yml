@@ -1,0 +1,28 @@
+excludes:
+  paths:
+    - pattern: "collector_module/test_requirements.txt"
+      reason: "TEST_OF"
+      comment: "Test-only dependency manifest for collector_module (pytest,
+        pytest-mock, pytest-ruff, pytest-html, coverage, ruff, responses,
+        mongomock and type stubs). None of these are distributed with the
+        application; the module's runtime dependencies are declared via
+        setup.py and requirements.txt. ORT's PIP analyzer runs python-inspector
+        with --analyze-setup-py-insecurely against this file and backtracks into
+        an ancient coverage sdist (coverage 3.5.3) whose legacy distribute
+        bootstrap attempts an insecure http://pypi.python.org download that now
+        returns HTTP 403 (SSL is required), failing resolution. The test
+        manifest is out of compliance scope, so excluding it is the correct fix
+        rather than suppressing a real gap; no distributed component is lost."
+    - pattern: "reports_module/test_requirements.txt"
+      reason: "TEST_OF"
+      comment: "Test-only dependency manifest for reports_module (pytest,
+        pytest-mock, pytest-ruff, pytest-html, coverage, ruff, mongomock and
+        type stubs). None of these are distributed with the application; the
+        module's runtime dependencies are declared via setup.py and
+        requirements.txt. ORT's PIP analyzer runs python-inspector with
+        --analyze-setup-py-insecurely against this file and backtracks into an
+        ancient coverage sdist (coverage 3.5.3) whose legacy distribute
+        bootstrap attempts an insecure http://pypi.python.org download that now
+        returns HTTP 403 (SSL is required), failing resolution. The test
+        manifest is out of compliance scope, so excluding it is the correct fix
+        rather than suppressing a real gap; no distributed component is lost."
