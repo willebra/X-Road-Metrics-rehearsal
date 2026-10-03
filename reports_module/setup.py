@@ -28,11 +28,11 @@ from setuptools import setup, find_packages
 # pandas, numpy
 
 requirements = [
-    'setuptools==82.0.1',
+    'setuptools==83.0.0',
     'Jinja2==3.1.6',
     'matplotlib==3.10.8',
     'pandas==2.3.3',
-    'weasyprint==68.1',
+    'weasyprint==70.0',
     'Pillow==12.3.0',
     'pymongo==4.16.0',
     'pyyaml==6.0.3',
